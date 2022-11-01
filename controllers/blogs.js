@@ -5,5 +5,5 @@ module.exports = {
 };
 
 function index(req, res) {
-    res.render('blogs/index', { title: 'Main Page' });
+    res.render('blogs/index', { title: 'BLOGS' });
 }
