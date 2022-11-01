@@ -5,5 +5,5 @@ module.exports = {
 };
 
 function index(req, res) {
-    res.render('gears/index', { title: 'GEAR' });
+    res.render('gears/gearidx', { title: 'GEAR' });
 }
