@@ -6,10 +6,15 @@
   </head>
   <body>
     <nav>
-      <a href="/">HOME</a>
-      |
+      
+      <% if (user) { %>
       <a href="/blogs">BLOGS</a>
       |
-      <a href="/gears">GEAR</a>
+      <a href="/blogs/new">NEW BLOG</a>
+      |
+      <a href="/logout">LOG OUT</a>
+      <% } else { %>
+      <a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a>
+      <% } %>
     </nav>
     <h1><%= title %></h1>
