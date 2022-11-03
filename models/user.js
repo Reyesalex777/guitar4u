@@ -1,6 +1,15 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const commentSchema = new Schema({
+  content: {
+    type: String,
+    required: true
+  },
+}, {
+  timestamps: true
+});
+
 const userSchema = new Schema({
   name: String,
   googleId: {
