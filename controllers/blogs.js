@@ -6,8 +6,20 @@ module.exports = {
     new: newBlog,
     create,
     edit,
-    deleteBlog
+    deleteBlog,
+    update
 };
+
+function update(req, res) {
+    Blog.findOneAndUpdate({
+        _id: req.params.id, userRecommending: req.user._id },
+            req.body,
+            {new: true},
+            function(err, blog) {
+                if (err || !blog) return res.redirect('/blogs');
+            res.redirect('/blogs')
+        })
+}
 
 function deleteBlog(req, res) {
     Blog.findOneAndDelete(
@@ -19,12 +31,12 @@ function deleteBlog(req, res) {
 
 function edit(req, res) {
     Blog.findOne(
-        {_id: req.params.id}, 
+        {'b._id': req.params.id},
         req.body,
         {new: true},
         function(err, blog) {
             if (err || !blog) return res.redirect('/blogs');
-            res.redirect(`/blogs/${blog._id}`);
+            res.render('blogs/edit', { title: 'edit blog', blog });
         }
     );
 }
@@ -39,11 +51,9 @@ function index(req, res) {
 
 function show(req, res) {
     Blog.findById(req.params.id, function (err, blog) {
-        Blog.find({ blog: blog._id }, function (err, blog) {
             res.render('blogs/show', { title: 'Blog info', blog });
         })
-    })
-}
+    }
 
 function newBlog(req, res) {
     res.render('blogs/new', { title: 'New Blog' });

@@ -7,9 +7,10 @@ var blogsCtrl = require('../controllers/blogs');
 router.get('/', blogsCtrl.index);
 router.get('/new', blogsCtrl.new);
 router.post('/', blogsCtrl.create);
-router.get('/', blogsCtrl.show);
-router.get('/blog/:id/edit', /*ensureLoggedIn,*/ blogsCtrl.edit);
+router.get('/:id', blogsCtrl.show);
+router.get('/:id/edit', /*ensureLoggedIn,*/ blogsCtrl.edit);
 router.delete('/:id', blogsCtrl.deleteBlog);
+router.put('/:id', blogsCtrl.update);
 
 
 module.exports = router;

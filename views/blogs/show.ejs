@@ -1,11 +1,48 @@
 <%- include('../partials/header') %>
 
-<h3>blogs index</h3>
-<form id="post-blog" action="/blogs/:id" >
+    <h3>blogs index</h3>
     <div>Title:</div>
-    <div><%= blog.title %></div>
-    <div><%= blog.blog %></div>
-    <input type="submit" value="post-blog">
-</form>
+    <div>
+        <%= blog.title %>
+    </div>
+    <div>
+        <%= blog.blog %>
+    </div>
 
-<%- include('../partials/footer') %>
+    <form action="/blogs/<%= blog._id %>/comments" method="POST">
+        <input type="text" name="comment">
+        <input type="submit" value="make comment">
+    </form>
+    <% if (blog.comments.length) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% blog.comments.forEach(function(c) { %>
+                    <tr>
+                        <td>
+                            <%= c.createdAt.toLocaleDateString() %>
+                        </td>
+                        <td>
+                            <%= c.comment %>
+                        </td>
+                        <td>
+                        <form
+                        action="/blogs/<%= c.id %>?_method=DELETE" method="POST"
+                            class="delete-form">
+                            <button type="submit">X</button>
+                        </form>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <% } else { %>
+            <h5>No comments</h5>
+            <% } %>
+
+                <%- include('../partials/footer') %>

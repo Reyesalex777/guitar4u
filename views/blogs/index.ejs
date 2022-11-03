@@ -40,10 +40,13 @@
                 >
                 <button type="submit">X</button>
             </form>
-            <a href="/blogs/show/<%= b.id %>">
-                <%= b.title %>
-            </a>
+            <%= b.title %>
             <%= b.blog %>
+            <a href="/blogs/<%= b._id %>">
+                full blog
+            </a>
+            |
+                     <a href="/blogs/<%= b.id %>/edit">Edit</a>
           </li>
           <% }); %>
       </ul>

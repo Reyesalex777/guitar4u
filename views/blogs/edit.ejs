@@ -1,8 +1,10 @@
 <%- include('../partials/header') %>
 
-<form action="/blogs/<%= blog.id %>?_method=PUT" method="POST">
-    <input type="text" name="blog" value="<%= blog.blog %>"><br>
+<% if (user) { %>
+<form action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
+    <textarea name="blog" id="blogtext" cols="30" rows="10"><%= blog.blog %></textarea>
     <button type="submit">Make Change</button>
 </form>
+<% } %>
 
 <%- include('../partials/footer') %>
