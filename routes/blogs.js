@@ -8,6 +8,8 @@ router.get('/', blogsCtrl.index);
 router.get('/new', blogsCtrl.new);
 router.post('/', blogsCtrl.create);
 router.get('/', blogsCtrl.show);
+router.get('/blog/:id/edit', /*ensureLoggedIn,*/ blogsCtrl.edit);
+router.delete('/:id', blogsCtrl.deleteBlog);
 
 
 module.exports = router;

@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-    <table>
+    <!-- <table>
         <thead>
 
             <tr>
@@ -7,18 +7,45 @@
                 <th>Blog</th>
             </tr>
         </thead>
-        <tbody>
-            <% blogs.forEach(function(b) { %>
+        <% blogs.forEach(function(b) { %>
+        <form 
+          action="/blogs/<%= b.id %>?_method=DELETE" 
+          method="POST"
+          class="delete-form"
+        >
+          <button type="submit">X</button>
+          <% }); %>
+          <tbody>
+              <% blogs.forEach(function(b) { %>
                 <tr>
                     <td>
-                        <%= b.title %>
                     </td>
                     <td>
                         <%= b.blog %>
                     </td>
                 </tr>
                 <% }); %>
-        </tbody>
-    </table>
-
+            </tbody>
+        </table>
+    </form> -->
+    
+    
+    <ul>
+        <% blogs.forEach(function(b) { %>
+            <li>
+                <form 
+                action="/blogs/<%= b.id %>?_method=DELETE" 
+                method="POST"
+                class="delete-form"
+                >
+                <button type="submit">X</button>
+            </form>
+            <a href="/blogs/show/<%= b.id %>">
+                <%= b.title %>
+            </a>
+            <%= b.blog %>
+          </li>
+          <% }); %>
+      </ul>
+        
     <%- include('../partials/footer') %>

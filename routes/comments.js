@@ -5,6 +5,8 @@ let commentsCtrl = require('../controllers/comments');
 
 // GET /blogs (displaying all gear blogs) 
 router.get('/', commentsCtrl.index);
-
+// router.get('/new', blogsCtrl.new);
+// router.post('/', blogsCtrl.create);
+// router.get('/:id/edit', blogsCtrl.edit);
 
 module.exports = router;
