@@ -36,7 +36,7 @@ function edit(req, res) {
         {new: true},
         function(err, blog) {
             if (err || !blog) return res.redirect('/blogs');
-            res.render('blogs/edit', { title: 'edit blog', blog });
+            res.render('blogs/edit', { title: 'Edit Blog', blog });
         }
     );
 }
