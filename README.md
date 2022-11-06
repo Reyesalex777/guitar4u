@@ -23,7 +23,7 @@ Guitar4u is a startup blog post page that allows users to give informatative and
 
   | Description | Screenshot |
   |:------------:|-----------| 
-  | <h3>Page</h3> | <img src="https://i.imgur.com/mAtAiuH.png" width="700">
+  | <h3>Page</h3> | <img src="https://i.imgur.com/0ZYpmPo.png" width="700">
    |
 
 </details>
@@ -33,7 +33,7 @@ Guitar4u is a startup blog post page that allows users to give informatative and
 
   |    Description    | Screenshot | 
   |:-----------------:|-------------| 
-  | <h3 align="center">Wireframe</h3> | <img src="https://i.imgur.com/v5IE967.jpg" width="700"> |
+  | <h3 align="center">Wireframe</h3> | <img src="https://i.imgur.com/0d3jWLk.jpg" width="700"> |
 </details>
 
 ## :computer: Technologies Used
@@ -54,10 +54,13 @@ A screenshot of your app's landing page and any other screenshots of interest.<b
 
 <h3>:calling: Instructions</h3>
 <details open>
-  <summary>Deployed link(Heroku)</summary>
+  <summary>Deployed links</summary>
   <ol>
     <li>
      <a href="https://guitar4u.herokuapp.com/">GUITAR4U</a>
+    </li>
+    <li>
+     <a href="https://trello.com/b/sinWdXgb/guitar4you/">Trello</a>
     </li>
     
 </details>
